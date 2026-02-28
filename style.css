@@ -108,11 +108,6 @@ p {
     align-items: center;
 }
 
-.double-zoom {    
-    min-width: 200vw; 
-    cursor: zoom-out;
-}
-
 .modal-content {
     max-width: 95%;
     max-height: 95%;
