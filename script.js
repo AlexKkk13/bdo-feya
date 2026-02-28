@@ -30,4 +30,23 @@ document.querySelectorAll('.image-wrapper img').forEach(img => {
     img.onclick = function() {
         openImage(this.src);
     }
+    
+document.getElementById("fullImage").onclick = function(e) {
+    e.stopPropagation();
+    const modal = document.getElementById("imageModal");
+    
+    isZoomed = !isZoomed;
+    
+    if (isZoomed) {
+        this.classList.add('double-zoom');
+        // Убираем центровку, чтобы можно было скроллить во все стороны
+        modal.style.display = "block"; 
+        this.style.cursor = 'zoom-out';
+    } else {
+        this.classList.remove('double-zoom');
+        // Возвращаем центровку
+        modal.style.display = "flex"; 
+        this.style.cursor = 'zoom-in';
+        window.scrollTo(0, 0); // Сбрасываем скролл модалки
+    }
 });
