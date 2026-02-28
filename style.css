@@ -138,19 +138,42 @@ section {
     padding-top: 20px;
 }
 #toTop {
-    display: none; 
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #ffcc00;
-    color: black;
+    display: none;          
+    position: fixed;       
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    
+    /* Размеры кнопки */
+    width: 60px;
+    height: 60px;
+    
+    /* Полупрозрачный фон (черный с прозрачностью 40%) */
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* Белая тонкая обводка */
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;     /* Делаем круглой */
+    
+    /* Центрируем стрелку */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Настройки стрелки */
+    color: #ffffff;
+    font-size: 32px;        /* Размер стрелки */
+    font-weight: 900;       /* Делаем её максимально жирной */
+    
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    font-weight: bold;
+    transition: all 0.3s ease; /* Плавный эффект при наведении */
+    outline: none;
+}
+
+/* Эффект при наведении (становится чуть плотнее) */
+#toTop:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1); /* Немного увеличивается */
 }
 /* Отступы для абзацев */
 p {
