@@ -27,6 +27,8 @@ body {
     text-transform: uppercase; 
     letter-spacing: 2px; /* расстояние между буквами */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Легкая тень */
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Содержание (меню) */
@@ -146,12 +148,11 @@ html {
     scroll-behavior: smooth; /* Это включает плавную прокрутку одной строкой */
 }
 
-/* Совет: добавь отступ сверху для заголовков, 
-чтобы "липкая" шапка их не перекрывала при скролле */
 section {
-    scroll-margin-top: 70px; /* Высота твоей шапки + небольшой запас */
+    scroll-margin-top: 100px; /* Высота шапки + небольшой запас */
     padding-top: 20px;
 }
+
 #toTop {
     display: none;          /* Скрыта по умолчанию */
     position: fixed;
@@ -331,4 +332,26 @@ h2, h3 {
 .nav-menu a:hover {
     color: #ffcc00; /* Золотой цвет при наведении */
     background-color: rgba(255, 204, 0, 0.1); /* Легкая золотистая подсветка фона */
+}
+
+/* Контейнер для выравнивания иконки и текста в ряд */
+.header-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Расстояние между иконкой и текстом */
+}
+
+/* Стили иконки феи */
+.fairy-icon {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.8)); /* Золотистое свечение */
+    animation: float 3s ease-in-out infinite; /* Анимация парения */
+}
+
+/* Анимация плавного парения вверх-вниз */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
 }
