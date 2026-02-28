@@ -244,3 +244,40 @@ h2, h3 {
 }
 
 .green strong { color: #4caf50; } /* Сделаем текст имен зеленым */
+.info-panel {
+    background-color: #2d2a1e; /* Темно-оливковый фон */
+    border: 1px solid #4a4532; /* Тонкая рамка */
+    border-radius: 12px;       /* Закругленные углы */
+    padding: 20px;
+    margin: 25px 0;            /* Отступы снаружи блока */
+    color: #e0dcc8;            /* Светло-кремовый цвет текста */
+    line-height: 1.6;
+}
+
+.info-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #4a4532;
+    padding-bottom: 15px;
+}
+
+.info-icon {
+    font-size: 24px;
+}
+
+.info-content p {
+    margin-bottom: 15px;       /* Вот они, наши абзацы */
+    font-size: 0.95rem;
+}
+
+.info-content p:last-child {
+    margin-bottom: 0;          /* У последнего абзаца убираем отступ */
+}
+
+/* Выделение важного текста оранжевым, как на скрине */
+.highlight-text {
+    color: #ffaa44;
+    font-weight: bold;
+}
