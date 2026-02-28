@@ -220,3 +220,14 @@ h2, h3 {
 .fairy-table td:last-child, .fairy-table th:last-child {
     border-right: none;
 }
+.char-list {
+    list-style: none; /* Убираем стандартные точки */
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.char-list li {
+    margin-bottom: 5px; /* Маленький отступ между строчками */
+}
+
+.green strong { color: #4caf50; } /* Сделаем текст имен зеленым */
