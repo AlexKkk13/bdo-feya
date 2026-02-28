@@ -273,6 +273,7 @@ h2, h3 {
 
 .info-icon {
     font-size: 24px;
+    flex-shrink: 0;
 }
 
 .info-content p {
@@ -288,4 +289,11 @@ h2, h3 {
 .highlight-text {
     color: #ffaa44;
     font-weight: bold;
+}
+
+.double-zoom {   
+    min-width: 200vw; 
+    display: block;    /* Убираем свойства flex, чтобы работал скролл */
+    margin: 0 auto;
+    cursor: zoom-out;
 }
