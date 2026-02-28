@@ -1,3 +1,5 @@
+let isZoomed = false; // Переменная для отслеживания зума
+
 // Функция для открытия картинки
 function openImage(src) {
     const modal = document.getElementById("imageModal");
@@ -5,13 +7,20 @@ function openImage(src) {
     
     modal.style.display = "flex";
     fullImg.src = src;
+    
+    // Сбрасываем зум при каждом новом открытии
+    isZoomed = false;
+    fullImg.classList.remove('double-zoom');
+    fullImg.style.cursor = 'zoom-in';
 }
-// Показываем кнопку при прокрутке
+
+// Показываем кнопку "Наверх" при прокрутке
 window.onscroll = function() {
+    const btn = document.getElementById("toTop");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        document.getElementById("toTop").style.display = "block";
+        btn.style.display = "block";
     } else {
-        document.getElementById("toTop").style.display = "none";
+        btn.style.display = "none";
     }
 };
 
@@ -19,29 +28,35 @@ window.onscroll = function() {
 function scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
-// Функция для закрытия
+
+// Функция для закрытия модалки
 function closeImage() {
     document.getElementById("imageModal").style.display = "none";
 }
 
+// Вешаем клик на все картинки в обертке .image-wrapper
+document.querySelectorAll('.image-wrapper img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.onclick = function() {
+        openImage(this.src);
+    }
+});
 
-    
+// Логика двойного зума внутри модалки (для ПК и Телефонов)
 document.getElementById("fullImage").onclick = function(e) {
-    e.stopPropagation();
+    e.stopPropagation(); // Чтобы окно не закрылось при клике на картинку
     const modal = document.getElementById("imageModal");
     
     isZoomed = !isZoomed;
     
     if (isZoomed) {
         this.classList.add('double-zoom');
-        // Убираем центровку, чтобы можно было скроллить во все стороны
-        modal.style.display = "block"; 
+        modal.style.display = "block"; // Меняем flex на block для скролла
         this.style.cursor = 'zoom-out';
     } else {
         this.classList.remove('double-zoom');
-        // Возвращаем центровку
-        modal.style.display = "flex"; 
+        modal.style.display = "flex";  // Возвращаем центровку
         this.style.cursor = 'zoom-in';
-        window.scrollTo(0, 0); // Сбрасываем скролл модалки
+        modal.scrollTo(0, 0);          // Сбрасываем скролл внутри модалки
     }
-});
+};
