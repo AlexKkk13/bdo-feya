@@ -306,3 +306,29 @@ h2, h3 {
     margin: 0 auto;
     cursor: zoom-out;
 }
+
+/* Стили для контейнера меню */
+.nav-menu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между кнопками */
+    flex-wrap: wrap; /* Чтобы на мобилках кнопки переносились на вторую строку */
+}
+
+/* Стили ссылок в меню */
+.nav-menu a {
+    color: #cecece;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Эффект при наведении */
+.nav-menu a:hover {
+    color: #ffcc00; /* Золотой цвет при наведении */
+    background-color: rgba(255, 204, 0, 0.1); /* Легкая золотистая подсветка фона */
+}
