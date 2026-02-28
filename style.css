@@ -9,13 +9,24 @@ body {
 
 /* Липкая шапка */
 .header {
-    background-color: #161616; /* Чуть светлее фона body */
-    border-bottom: 1px solid #252525; /* Тонкая разделительная линия */
-    padding: 15px;
+    background-color: #111111; /* Очень темный серый, почти черный */
+    border-bottom: 2px solid #1a1a1a; /* Тонкая линия снизу для объема */
+    padding: 15px 0;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Тень, чтобы шапка отделялась от контента при скролле */
+}
+
+/* Настройка текста внутри шапки */
+.header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #ffffff; /* Чистый белый цвет для контраста */
+    text-transform: uppercase; 
+    letter-spacing: 2px; /* расстояние между буквами */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Легкая тень */
 }
 
 /* Содержание (меню) */
@@ -30,12 +41,6 @@ body {
 /* Таблица */
 .fairy-table {
     background-color: #121212; /* Глубокий темный для таблицы */
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #ffffff;
 }
 
 /* Контейнер для контента */
