@@ -215,11 +215,11 @@ h2, h3 {
 
 .fairy-table {
     width: 100%;
-    border-collapse: collapse; /* Убирает двойные рамки */
-    background-color: #242424;
-    color: #e1e1e1;
+    border-collapse: collapse;
+    background-color: #121212; 
+    color: #cecece;
     font-size: 0.9rem;
-    min-width: 500px; /* Чтобы колонки не слишком сжимались */
+    min-width: 500px;
 }
 
 .fairy-table th, .fairy-table td {
