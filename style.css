@@ -92,7 +92,7 @@ p {
 }
 /* Стили модального окна */
 .modal {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -100,9 +100,17 @@ p {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.9);
-    cursor: zoom-out;
-    align-items: center;
+    
+    overflow: auto; 
+    -webkit-overflow-scrolling: touch; 
+    
     justify-content: center;
+    align-items: center;
+}
+
+.double-zoom {    
+    min-width: 200vw; 
+    cursor: zoom-out;
 }
 
 .modal-content {
